@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="388.0" prefWidth="588.0" style="-fx-background-color: #698456;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Views.ControlMenuController">
+   <AnchorPane fx:id="viewFlightsPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <TableView fx:id="viewFlightsTable" layoutX="14.0" layoutY="14.0" prefHeight="265.0" prefWidth="572.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+           <columns>
+             <TableColumn fx:id="name_col" prefWidth="75.0" text="Name" />
+             <TableColumn fx:id="from_col" prefWidth="75.0" text="From" />
+               <TableColumn fx:id="to_col" prefWidth="75.0" text="To" />
+               <TableColumn fx:id="time_col" prefWidth="75.0" text="Time" />
+               <TableColumn fx:id="number_col" prefWidth="75.0" text="Number" />
+               <TableColumn fx:id="aSeats_col" prefWidth="75.0" text="Seats left" />
+               <TableColumn fx:id="price_col" prefWidth="75.0" text="Price" />
+           </columns>
+         </TableView>
+         <Button fx:id="updateFlightBtn" layoutX="450.0" layoutY="318.0" mnemonicParsing="false" onAction="#openUpdateFlight" prefHeight="25.0" prefWidth="64.0" text="Update" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="86.0" />
+         <Button fx:id="removeFlightBtn" layoutX="522.0" layoutY="318.0" mnemonicParsing="false" onAction="#openRemoveFlight" prefHeight="25.0" prefWidth="64.0" text="Remove" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+         <Button fx:id="createFlightBtn" layoutX="377.0" layoutY="318.0" mnemonicParsing="false" onAction="#openCreateFlight" prefHeight="25.0" prefWidth="64.0" text="Add" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="158.0" />
+         <Button fx:id="passangersOnFlightBtn" layoutX="192.0" layoutY="318.0" mnemonicParsing="false" onAction="#open_PassangerPane" prefHeight="25.0" prefWidth="162.0" text="View Passangers On Flight" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="230.0" />
+      </children></AnchorPane>
+   <AnchorPane fx:id="createFlightPane" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <children>
+         <Button fx:id="confirmBtn" layoutX="482.0" layoutY="361.0" mnemonicParsing="false" onAction="#createFlight" prefHeight="25.0" prefWidth="104.0" text="Create Flight" />
+         <TextField fx:id="airportNameTxt" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="212.0" promptText="Airport name" />
+         <TextField fx:id="airportLocationTxt" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="47.0" prefHeight="25.0" prefWidth="212.0" promptText="Airport location" />
+         <TextField fx:id="airportIdTxt" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="81.0" prefHeight="25.0" prefWidth="212.0" promptText="Airport ID" />
+         <TextField fx:id="flightNameTxt" layoutX="236.0" layoutY="14.0" prefHeight="25.0" prefWidth="350.0" promptText="Flight name" />
+         <TextField fx:id="flightFromTxt" layoutX="236.0" layoutY="47.0" prefHeight="25.0" prefWidth="350.0" promptText="Flight from" />
+         <TextField fx:id="flightToTxt" layoutX="236.0" layoutY="81.0" prefHeight="25.0" prefWidth="350.0" promptText="Flight to" />
+         <TextField fx:id="flightTimeTxt" layoutX="236.0" layoutY="113.0" prefHeight="25.0" prefWidth="171.0" promptText="Flight time" />
+         <TextField fx:id="flightNoTxt" layoutX="415.0" layoutY="113.0" prefHeight="25.0" prefWidth="171.0" promptText="Flight no" />
+         <TextField fx:id="totalSeatsTxt" layoutX="236.0" layoutY="144.0" prefHeight="25.0" prefWidth="171.0" promptText="Total seats" />
+         <TextField fx:id="priceTxt" layoutX="415.0" layoutY="144.0" prefHeight="25.0" prefWidth="171.0" promptText="Price" />
+         <Button fx:id="cancelCreateBtn" layoutX="363.0" layoutY="361.0" mnemonicParsing="false" onAction="#returnToView" prefHeight="25.0" prefWidth="104.0" text="Cancel" />
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="updateFlightPane" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <children>
+         <Button fx:id="confirmBtn1" layoutX="482.0" layoutY="361.0" mnemonicParsing="false" onAction="#onConfirmUpdate" prefHeight="25.0" prefWidth="104.0" text="Update Flight" />
+         <TextField fx:id="airportNameTxt1" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="212.0" promptText="Airport name" />
+         <TextField fx:id="airportLocationTxt1" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="47.0" prefHeight="25.0" prefWidth="212.0" promptText="Airport location" />
+         <TextField fx:id="airportIdTxt1" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="81.0" prefHeight="25.0" prefWidth="212.0" promptText="Airport ID" />
+         <TextField fx:id="flightNameTxt1" layoutX="236.0" layoutY="14.0" prefHeight="25.0" prefWidth="350.0" promptText="Flight name" />
+         <TextField fx:id="flightFromTxt1" layoutX="236.0" layoutY="47.0" prefHeight="25.0" prefWidth="350.0" promptText="Flight from" />
+         <TextField fx:id="flightToTxt1" layoutX="236.0" layoutY="81.0" prefHeight="25.0" prefWidth="350.0" promptText="Flight to" />
+         <TextField fx:id="flightTimeTxt1" layoutX="236.0" layoutY="113.0" prefHeight="25.0" prefWidth="171.0" promptText="Flight time" />
+         <TextField fx:id="flightNoTxt1" editable="false" layoutX="415.0" layoutY="113.0" prefHeight="25.0" prefWidth="171.0" promptText="Flight no" />
+         <TextField fx:id="totalSeatsTxt1" layoutX="236.0" layoutY="144.0" prefHeight="25.0" prefWidth="171.0" promptText="Total seats" />
+         <TextField fx:id="priceTxt1" layoutX="415.0" layoutY="144.0" prefHeight="25.0" prefWidth="171.0" promptText="Price" />
+         <Button fx:id="cancelUpdateBtn" layoutX="363.0" layoutY="361.0" mnemonicParsing="false" onAction="#returnToView" prefHeight="25.0" prefWidth="104.0" text="Cancel" />
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="viewPassangersPane" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <children>
+         <TableView fx:id="PassangersTable" layoutX="14.0" layoutY="14.0" prefHeight="327.0" prefWidth="572.0">
+            <columns>
+               <TableColumn fx:id="passName_col" prefWidth="144.0" text="Name" />
+               <TableColumn fx:id="passSurname_col" minWidth="0.0" prefWidth="160.0" text="Surname" />
+               <TableColumn fx:id="passNationality_col" minWidth="0.0" prefWidth="125.0" text="Nationality" />
+               <TableColumn fx:id="passNationalId_col" prefWidth="142.0" text="National ID" />
+            </columns>
+         </TableView>
+         <Button fx:id="backToMainBtn" layoutX="472.0" layoutY="361.0" mnemonicParsing="false" onAction="#returnToView" prefHeight="25.0" prefWidth="114.0" text="Back" />
+      </children>
+   </AnchorPane>
+
+    <Button fx:id="goBackToMain" layoutX="14.0" layoutY="361.0" onMouseClicked="#exitWhindow" prefHeight="25.0" prefWidth="147.0" text="Back to main menu" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+
+    </Button>
+
+</AnchorPane>

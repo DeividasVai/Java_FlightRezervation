@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="fullPVPane" prefHeight="407.0" prefWidth="600.0" style="-fx-background-color: #698456;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Views.PassangerMenuController">
+
+    <Button fx:id="goBackToMain" layoutX="14.0" layoutY="368.0" onMouseClicked="#exitWhindow" prefHeight="25.0" prefWidth="147.0" text="Back to main menu" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+
+    </Button>
+   <AnchorPane fx:id="PassangerInformationPane" layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="519.0" visible="false" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="67.0">
+      <children>
+         <TextField fx:id="PassName" layoutY="2.0" prefHeight="25.0" prefWidth="177.0" promptText="Name" AnchorPane.leftAnchor="0.0" />
+         <TextField fx:id="PassSurname" layoutY="35.0" prefHeight="25.0" prefWidth="177.0" promptText="Surname" AnchorPane.leftAnchor="0.0" />
+         <TextField fx:id="PassNationality" layoutY="67.0" prefHeight="25.0" prefWidth="177.0" promptText="Nationality" AnchorPane.leftAnchor="0.0" />
+         <TextField fx:id="PassNationalId" layoutY="100.0" prefHeight="25.0" prefWidth="177.0" promptText="National ID" AnchorPane.leftAnchor="0.0" />
+         <Button fx:id="UpdatePassInfo" layoutY="137.0" mnemonicParsing="false" onAction="#UpdatePassInformation" text="Update Passanger Information" AnchorPane.leftAnchor="0.0" />
+      </children>
+   </AnchorPane>
+   <Button fx:id="ShowPassInfo" layoutX="418.0" layoutY="368.0" mnemonicParsing="false" onAction="#SetPassInfoVisibility" text="Show Passanger Information" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+   <AnchorPane fx:id="MainPassangerPane" layoutX="14.0" layoutY="14.0" prefHeight="350.0" prefWidth="571.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
+      <children>
+         <TableView fx:id="FlightsTable" layoutX="14.0" layoutY="14.0" prefHeight="256.0" prefWidth="488.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <columns>
+             <TableColumn fx:id="name_col" prefWidth="75.0" text="Name" />
+             <TableColumn fx:id="from_col" prefWidth="75.0" text="From" />
+               <TableColumn fx:id="to_col" prefWidth="75.0" text="To" />
+               <TableColumn fx:id="time_col" prefWidth="75.0" text="Time" />
+               <TableColumn fx:id="number_col" prefWidth="75.0" text="Number" />
+               <TableColumn fx:id="aSeats_col" prefWidth="75.0" text="Seats left" />
+               <TableColumn fx:id="price_col" prefWidth="75.0" text="Price" />
+           </columns>
+         </TableView>
+         <ComboBox fx:id="FilterFrom" layoutX="246.0" layoutY="324.0" onAction="#onFilterFromSelectionChanged" prefHeight="25.0" prefWidth="147.0" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="178.0" />
+         <Button fx:id="BookFlightBtn" layoutX="403.0" layoutY="289.0" mnemonicParsing="false" onAction="#BookFlight" prefHeight="25.0" prefWidth="168.0" text="Book Flight" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="0.0" />
+      </children>
+   </AnchorPane>
+</AnchorPane>
